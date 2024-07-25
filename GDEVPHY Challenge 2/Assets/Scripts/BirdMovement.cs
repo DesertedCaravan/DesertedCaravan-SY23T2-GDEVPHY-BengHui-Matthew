@@ -44,7 +44,7 @@ public class BirdMovement : MonoBehaviour
         _currentSpeed = new Vector3(0, 0, 0); // x is sideways, y is upwards
         _slingForce = new Vector3(0, 0, 0);
 
-        _mass = 1.0f;
+        _mass = 5.0f;
 
         _c = 5.0f;
         _normal = 1f;
@@ -63,14 +63,16 @@ public class BirdMovement : MonoBehaviour
         if (_birdReleased == true)
         {
             // WIP
-            
+            /*
             _slingTimePassed += Time.deltaTime;
             
             if (_slingTimePassed <= 2f)
             {
                 ApplyForce(_slingForce);
             }
+            */
             
+            // _slingForce /= 2.0f;
 
             // Apply Friction to spaceship by getting the opposite direction multiplied by the _frictionMagnitude
             // ApplyForce((_currentSpeed * -1).normalized * _frictionMagnitude);
@@ -86,7 +88,7 @@ public class BirdMovement : MonoBehaviour
 
             _timePassed += Time.deltaTime;
 
-            if (_timePassed > 0.1f && _currentSpeed.magnitude > 5.0f)
+            if (_timePassed > 0.01f && _currentSpeed.magnitude > 1.0f)
             {
                 Instantiate(trailDotPrefab, this.transform.position, Quaternion.identity);
                 _timePassed = 0f;
@@ -148,6 +150,12 @@ public class BirdMovement : MonoBehaviour
     {
         _slingForce = slingForce;
         _birdReleased = true;
+
+        Debug.Log("old Sling Force: " + _slingForce);
+
+        ApplyForce(_slingForce * 600.0f);
+
+        Debug.Log("New Sling Force: " + (_slingForce * 600.0f));
     }
 
     public void BirdStop()

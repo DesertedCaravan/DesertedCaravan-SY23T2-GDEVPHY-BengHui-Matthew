@@ -111,8 +111,6 @@ public class SlingshotMovement : MonoBehaviour
 
                     Vector3 slingForce = _rubberDirection.normalized * (-1 * stretch * _maxForce);
 
-                    Debug.Log(slingForce);
-
                     redBird.BirdRelease(slingForce); // Must be applied continuously
                 }
                 else

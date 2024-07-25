@@ -1054,9 +1054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a6f680b302fc44dbc5fe9eba9be019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minDistOfAttraction: 1
-  _maxDistOfAttraction: 10
-  _maxAttraction: 5
+  _minDistOfAttraction: 0
+  _maxDistOfAttraction: 5
+  _maxAttraction: 15
 --- !u!1 &1143551587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   - {fileID: 1859587429}
   - {fileID: 1047354033}
   _maxPullDistance: 1.5
-  _maxForce: 25
+  _maxForce: 100
 --- !u!1 &1240771834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,9 +1207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5d93643beaa6d4d97885f2937cd514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _accelerationFactor: 10
-  _topSpeed: 25
-  _gravity: -0.981
+  _accelerationFactor: 250
+  _topSpeed: 500
+  _gravity: -10
   blackHole: {fileID: 1073045969}
   trailDotPrefab: {fileID: 2034517044446552960, guid: 5546803e4fcc7604fa6f3a978f2f284d, type: 3}
 --- !u!212 &1240771836
@@ -1348,9 +1348,9 @@ RectTransform:
   - {fileID: 106046020}
   m_Father: {fileID: 94479009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -168.7, y: -124.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 85, y: 20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1431184150

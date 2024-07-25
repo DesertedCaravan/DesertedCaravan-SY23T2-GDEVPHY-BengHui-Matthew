@@ -25,10 +25,18 @@ public class BlackHole : MonoBehaviour
     {
         Vector3 attractionDirection = this.transform.position - bird.transform.position;
         float attractionDistance = attractionDirection.magnitude;
-        attractionDistance = Mathf.Clamp(attractionDistance, _minDistOfAttraction, _maxDistOfAttraction);
 
-        float strength = (_maxAttraction * bird.Mass * _mass) / (attractionDistance * attractionDistance);
-        return attractionDirection.normalized * strength;
+        if (attractionDistance >= _minDistOfAttraction && attractionDistance <= _maxDistOfAttraction)
+        {
+            attractionDistance = Mathf.Clamp(attractionDistance, _minDistOfAttraction, _maxDistOfAttraction);
+
+            float strength = (_maxAttraction * bird.Mass * _mass) / (attractionDistance * attractionDistance);
+            return attractionDirection.normalized * strength;
+        }
+        else
+        {
+            return new Vector3(0, 0, 0);
+        }
     }
 
 }
